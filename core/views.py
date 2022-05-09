@@ -6,7 +6,7 @@ from django.db.models import Q
 def home(request):
     if 'q' in request.GET:
         Search_word = request.GET['q']
-        Full = Q(Q(first_name__icontains=Search_word) | Q(second_name__icontains=Search_word) | Q(age__icontains=Search_word) | Q(job__icontains=Search_word))
+        Full = Q(Q(first_name__icontains=Search_word) | Q(second_name__icontains=Search_word) | Q(age__icontains=Search_word) | Q(job__icontains=Search_word) | Q(experience__icontains=Search_word))
         Employer = Employers.objects.filter(Full)
     else:
         Employer = Employers.objects.all()

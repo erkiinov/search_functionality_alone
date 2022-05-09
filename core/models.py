@@ -10,6 +10,7 @@ class Employers(models.Model):
     second_name = models.CharField(max_length=20)
     age = models.IntegerField(default=18)
     job = models.CharField(max_length=20)
+    experience = models.CharField(max_length=20) 
 
     def __str__(self) -> str:
         return self.first_name
